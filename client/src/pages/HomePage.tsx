@@ -54,7 +54,7 @@ export const HomePage = () => {
             <div className="text-center p-6 bg-gray-50 rounded-lg">
               <div className="mb-4">
                 <svg className="mx-auto h-12 w-12 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7H3m8 4V3m-6 4h10M5 21h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7H3m8 4V3m-6 4h10M5 21h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 002-2v10a2 2 0 002 2z" />
                 </svg>
               </div>
               <h3 className="text-lg font-medium mb-3">Connect & Close</h3>

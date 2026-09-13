@@ -10,8 +10,11 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "src/**/*"
+  "files": [
+    "./src/server.ts",
+    "./src/config/database.ts",
+    "./src/controllers/authController.ts",
+    "./src/routes/auth.ts"
   ],
   "exclude": [
     "node_modules",

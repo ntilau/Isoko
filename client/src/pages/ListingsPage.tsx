@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { fetchListings } from '../services/listingsService'
 
 export const ListingsPage = () => {
   const [listings, setListings] = useState<any[]>([])
@@ -12,45 +13,11 @@ export const ListingsPage = () => {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    // Simulate fetching listings from API
     const fetchListings = async () => {
       setLoading(true)
       try {
-        // In a real app, this would be an API call
-        // For now, we'll use mock data
-        const mockListings = [
-          {
-            id: '1',
-            title: 'SaaS Business for Sale',
-            category: 'Technology',
-            price: 500000,
-            location: 'United States',
-            revenue: 120000,
-            ebita: 30000,
-            description: 'A profitable SaaS business with recurring revenue.',
-          },
-          {
-            id: '2',
-            title: 'E-commerce Store',
-            category: 'Retail',
-            price: 300000,
-            location: 'Canada',
-            revenue: 80000,
-            ebita: 15000,
-            description: 'Established e-commerce store with loyal customer base.',
-          },
-          {
-            id: '3',
-            title: 'Franchise Opportunity',
-            category: 'Food & Beverage',
-            price: 200000,
-            location: 'United Kingdom',
-            revenue: 0,
-            ebita: 0,
-            description: 'Established franchise with proven business model.',
-          },
-        ]
-        setListings(mockListings)
+        const data = await fetchListings(filters)
+        setListings(data.listings || [])
       } catch (error) {
         console.error('Error fetching listings:', error)
       } finally {
@@ -59,7 +26,7 @@ export const ListingsPage = () => {
     }
 
     fetchListings()
-  }, [])
+  }, [filters.category, filters.minPrice, filters.maxPrice, filters.location])
 
   const filteredListings = listings.filter((listing) => {
     if (filters.category && listing.category !== filters.category) return false
@@ -160,37 +127,39 @@ export const ListingsPage = () => {
             ) : filteredListings.length === 0 ? (
               <div className="col-span-full text-center py-12">
                 <p className="text-gray-500">No listings match your filters.</p>
-              </div>
+              )
             ) : (
-              filteredListings.map((listing) => (
-                <div key={listing.id} className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="p-6">
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">
-                      {listing.title}
-                    </h3>
-                    <p className="text-sm text-gray-500 mb-2">
-                      {listing.category} • {listing.location}
-                    </p>
-                    <div className="space-y-2 text-sm text-gray-600">
-                      <p>
-                        <span className="font-medium">Price:</span> ${listing.price.toLocaleString()}
+              <div className="col-span-full">
+                {filteredListings.map((listing) => (
+                  <div key={listing.id} className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                    <div className="p-6">
+                      <h3 className="text-lg font-medium text-gray-900 mb-2">
+                        {listing.title}
+                      </h3>
+                      <p className="text-sm text-gray-500 mb-2">
+                        {listing.category} • {listing.location}
                       </p>
-                      <p>
-                        <span className="font-medium">Revenue:</span> ${listing.revenue.toLocaleString()}
+                      <div className="space-y-2 text-sm text-gray-600">
+                        <p>
+                          <span className="font-medium">Price:</span> {listing.price.toLocaleString()}
+                        </p>
+                        <p>
+                          <span className="font-medium">Revenue:</span> {listing.revenue.toLocaleString()}
+                        </p>
+                        <p>
+                          <span className="font-medium">EBITDA:</span> {listing.ebita.toLocaleString()}
+                        </p>
+                      </div>
+                      <p className="mt-4 text-sm text-gray-500 line-clamp-3">
+                        {listing.description}
                       </p>
-                      <p>
-                        <span className="font-medium">EBITDA:</span> ${listing.ebita.toLocaleString()}
-                      </p>
+                      <Link to={`/listings/${listing.id}`} className="mt-4 inline-block px-4 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100">
+                        View Details
+                      </Link>
                     </div>
-                    <p className="mt-4 text-sm text-gray-500 line-clamp-3">
-                      {listing.description}
-                    </p>
-                    <Link to={`/listings/${listing.id}`} className="mt-4 inline-block px-4 py-2 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100">
-                      View Details
-                    </Link>
                   </div>
-                </div>
-              ))
+                ))}
+              </div>
             )}
           </div>
         </div>

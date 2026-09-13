@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from 'express'
 import dotenv from 'dotenv'
 import authRouter from './routes/auth'
+import listingsRouter from './routes/listings'
 
 dotenv.config()
 
@@ -13,6 +14,7 @@ app.use(express.urlencoded({ extended: true }))
 
 // Routes
 app.use('/api/auth', authRouter)
+app.use('/api/listings', listingsRouter)
 
 // Basic route
 app.get('/', (req: Request, res: Response) => {

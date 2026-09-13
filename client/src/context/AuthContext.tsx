@@ -32,16 +32,16 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       const response = await apiLogin({ email, password })
       const userData: User = {
-        id: response.id || '1',
-        email,
-        role: response.role || 'business_owner',
-        name: response.name || 'John Doe',
+        id: response.user.id,
+        email: response.user.email,
+        role: response.user.role,
+        name: response.user.name,
         token: response.token
       }
       localStorage.setItem('user', JSON.stringify(userData))
       setUser(userData)
-    } catch (error) {
-      throw new Error('Login failed: ' + (error.response?.data?.message || error.message))
+    } catch (error: any) {
+      throw new Error('Login failed: ' + (error.response?.data?.error || error.message))
     }
   }
 
@@ -49,16 +49,16 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       const response = await apiRegister(userData)
       const newUser: User = {
-        id: response.id || '2',
-        email: userData.email,
-        role: userData.role,
-        name: userData.name,
+        id: response.user.id,
+        email: response.user.email,
+        role: response.user.role,
+        name: response.user.name,
         token: response.token
       }
       localStorage.setItem('user', JSON.stringify(newUser))
       setUser(newUser)
-    } catch (error) {
-      throw new Error('Registration failed: ' + (error.response?.data?.message || error.message))
+    } catch (error: any) {
+      throw new Error('Registration failed: ' + (error.response?.data?.error || error.message))
     }
   }
 

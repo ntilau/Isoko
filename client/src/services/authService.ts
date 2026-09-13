@@ -1,6 +1,13 @@
 import axios from 'axios'
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+const getApiBaseUrl = () => {
+  if (import.meta.env?.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL
+  }
+  return 'http://localhost:5001/api' // Updated to use port 5001
+}
+
+const API_BASE_URL = getApiBaseUrl()
 
 export const register = async (userData: any) => {
   const response = await axios.post(`${API_BASE_URL}/auth/register`, userData)
