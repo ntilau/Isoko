@@ -1,0 +1,21 @@
+::1 - - [16/Sep/2026 11:22:34] "GET / HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:22:34] "GET /style/Mymarket.css HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:22:34] "GET /style/navbar.css HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:22:34] "GET /style/fromnewarrivals.css HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:22:34] "GET /style/homepart.css HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:22:34] "GET /style/homepagefooter.css HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:22:35] "GET /components/homepagefooter.js HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:22:35] "GET /components/navbar.js HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:22:35] "GET /footerImg/appstore.png HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:22:35] "GET /footerImg/googleplay.png HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:22:35] "GET /footerImg/supplier.png HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:22:35] "GET /footerImg/facebook.png HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:22:35] "GET /footerImg/twitter.png HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:22:35] "GET /footerImg/youtube.png HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:22:35] "GET /footerImg/insta.png HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:23:43] "GET /signin.html HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:23:43] "GET /style/footer.css HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:23:43] "GET /style/signin.css HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:23:43] "GET /components/footer.js HTTP/1.1" 200 -
+::1 - - [16/Sep/2026 11:23:43] code 404, message File not found
+::1 - - [16/Sep/2026 11:23:43] "GET /favicon.ico HTTP/1.1" 404 -
