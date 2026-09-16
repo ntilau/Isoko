@@ -166,7 +166,7 @@ function displayProducts(data){
 
 async function fetch_data(url) {
     try {
-        let response = await fetch(`https://alibaba-backend.herokuapp.com/electronics/${url}`);
+        let response = await fetch(`http://localhost:5003/electronics/${url}`);
         let data = await response.json();
         return data;
     }

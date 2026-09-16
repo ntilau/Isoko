@@ -232,7 +232,7 @@
 
             everyDetails = JSON.stringify(everyDetails);
 
-            let response = await fetch("https://alibaba-backend.herokuapp.com/register", {
+            let response = await fetch("http://localhost:5003/register", {
                 method: "POST",
                 body: everyDetails,
                 headers: {
