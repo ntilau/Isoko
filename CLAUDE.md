@@ -67,6 +67,37 @@ Isoko/
 ## Development Setup
 
 ### Prerequisites
+- Modern web browser
+- Node.js (v14 or higher) - for running local backend
+- Apache2 web server (optional, for production-like development)
+
+### Running Locally
+You have two options for local development:
+
+#### Option 1: Python Built-in Server (Simple)
+```bash
+# Start the development server (typically runs on port 8080)
+python -m http.server 8080
+
+# Access the site at http://localhost:8080
+```
+
+#### Option 2: Apache2 (Production-like)
+```bash
+# Copy files to Apache document root (adjust path as needed)
+sudo cp -r * /var/www/html/
+
+# Ensure proper permissions
+sudo chown -R www-data:www-data /var/www/html/
+
+# Access the site at http://localhost/
+```
+
+Note: You may see the Python server already running in the background, as indicated by processes in the system.
+
+### Running the Local Backend (Required for Development)
+
+### Prerequisites
 - Python 3.x (for local development server)
 - Modern web browser
 - Node.js (v14 or higher) - for running local backend
@@ -81,7 +112,7 @@ python -m http.server 8080
 # Access the site at http://localhost:8080
 ```
 
-Note: You may see this already running in the background, as indicated by processes in the system.
+Note: You may see servers already running in the background, as indicated by processes in the system.
 
 ### Running the Local Backend (Required for Development)
 The frontend is configured to work with a local backend. The Heroku backend option has been removed - you must run the local backend for full functionality.
@@ -192,7 +223,7 @@ The frontend consumes a REST API hosted at:
 
 ## Deployment
 The frontend can be deployed to any static file hosting service:
-- Currently deployed at: https://isoko.app
+- Currently deployed at: http://143.47.179.233
 - Other options: Netlify, Vercel, GitHub Pages, AWS S3
 - Any web server capable of serving static files
 

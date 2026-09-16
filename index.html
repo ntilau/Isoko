@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alibaba.com:Manufacturers, Suppliers,Exporters&importers</title>
+    <title>Isoko.app:Manufacturers, Suppliers,Exporters&importers</title>
     <link rel="stylesheet" href="./style/navbar.css">
     <script src="https://kit.fontawesome.com/db1e80451c.js" crossorigin="anonymous"></script>
     <link rel="icon" href="https://bit.ly/3rwY3Og" type="image" />
@@ -445,7 +445,7 @@
                 <img src="https://s.alicdn.com/@img/imgextra/i3/O1CN019O7aLh1vuJ16rLQeQ_!!6000000006232-0-tps-350-350.jpg_100x100.jpg"
                     alt="">
             </span>
-            <span style="display: flex;margin: 4px;"><b>Alibaba.com Features</b>
+            <span style="display: flex;margin: 4px;"><b>Isoko.app Features</b>
                 <img src="https://s.alicdn.com/@img/imgextra/i2/O1CN01HHvMGg1xmBDtLS5RQ_!!6000000006485-2-tps-350-350.png_100x100.jpg"
                     alt="">
             </span>
@@ -1504,7 +1504,7 @@
 
     if (token) {
         setTimeout(async () => {
-            let response = await fetch(`http://localhost:5003/users/${token}`);
+            let response = await fetch(`http://143.47.179.233:5003/users/${token}`);
             user = await response.json();
 
             document.querySelector("#navbar-signin-logo").innerHTML = `<p id="hi-user">Hi, ${user.firstName}</p>`;

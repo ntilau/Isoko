@@ -189,9 +189,9 @@
                 <div>
                     <input type="checkbox">
                     <p id="agree">While creating a website account: I agree to abide by the
-                        Alibaba.com
+                        Isoko.app
                         Membership Agreement- Willing to receive emails
-                        from Alibaba.com members and services</p>
+                        from Isoko.app members and services</p>
                 </div>
                 <div>
                     <input type="submit" id="reg" value="Agree and Register">
@@ -232,7 +232,7 @@
 
             everyDetails = JSON.stringify(everyDetails);
 
-            let response = await fetch("http://localhost:5003/register", {
+            let response = await fetch("http://143.47.179.233:5003/register", {
                 method: "POST",
                 body: everyDetails,
                 headers: {
